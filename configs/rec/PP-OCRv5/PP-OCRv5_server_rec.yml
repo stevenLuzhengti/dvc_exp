@@ -7,7 +7,7 @@ Global:
   print_batch_step: 10
   save_model_dir: ./output/PP-OCRv5_server_rec
   save_epoch_step: 1
-  eval_batch_step: [0, 2000]
+  eval_batch_step: [0, 150]
   cal_metric_during_train: true
   calc_epoch_interval: 1
   pretrained_model: 
@@ -78,10 +78,10 @@ Train:
   dataset:
     name: MultiScaleDataSet
     ds_width: false
-    data_dir: ./train_data/
+    data_dir: /mnt/ssd4t/steven/projects/dag_hub_exp/data/data_05_06_2025
     ext_op_transform_idx: 1
     label_file_list:
-    - ./train_data/train_list.txt
+    - /mnt/ssd4t/steven/projects/dag_hub_exp/data/data_05_06_2025/train.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -111,9 +111,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data
+    data_dir: /mnt/ssd4t/steven/projects/dag_hub_exp/data/data_05_06_2025
     label_file_list:
-    - ./train_data/val_list.txt
+    - /mnt/ssd4t/steven/projects/dag_hub_exp/data/data_05_06_2025/val.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
